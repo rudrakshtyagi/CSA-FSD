@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+<body id="main">
+    
+<style>
+    #main{
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content:center;
+    }
+    #box{
+        height: 300px;
+        width: 300px;
+        background-color: rgb(205, 205, 130);
+        padding: 10px;
+        border-radius: 10%;
+    }
+    #nav{
+        display: flex;
+        justify-content: space-between;
+        padding: 5px;
+    }
+    #rounded{
+        height: 50px;
+        width:50px;
+        border-radius: 50%;
+        background-color: red;
+    }
+    #title{
+        width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 30px;
+    }
+    #display{
+        background-color: rgb(95, 111, 203);
+        margin-top: 40px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: bold;
+    }
+    #displaycontainer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #buttons{
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-around;
+    }
+    button{
+        padding: 5px 10px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+</style>
+
+<div id="box">
+    <div id="nav">
+        <div id="rounded"></div>
+        <div id="title">Counter</div>
+    </div>
+    <div id="displaycontainer">
+        <div id="display">0</div>
+    </div>
+
+    <div id="buttons">
+        <button id="decrease">-</button>
+        <button id="reset">Reset</button>
+        <button id="increase">+</button>
+    </div>
+</div>
+
+<script>
+    let count = 0;
+    const display = document.getElementById("display");
+
+    document.getElementById("increase").addEventListener("click", () => {
+        count++;
+        display.innerText = count;
+    });
+
+    document.getElementById("decrease").addEventListener("click", () => {
+        count--;
+        display.innerText = count;
+    });
+
+    document.getElementById("reset").addEventListener("click", () => {
+        count = 0;
+        display.innerText = count;
+    });
+</script>
+
+</body>
+</html>
